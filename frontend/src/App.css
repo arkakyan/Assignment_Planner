@@ -1,0 +1,270 @@
+
+/* This is for the whole CSS body*/
+
+body {
+  background-color: #ff6f61; 
+  color: #fff;
+  font-family: 'Arial', sans-serif; 
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  min-height: 100vh; 
+  }
+
+/** Assignment List Styling. using bootstrap CSS */
+.gradient-custom-2 {
+  background: #ff6f61; 
+  background: -webkit-linear-gradient(to right, #ff6f61, #ff8b60); 
+  background: linear-gradient(to right, #ff6f61, #ff8b60); 
+  padding: 1em; 
+}
+
+.mask-custom {
+  border-radius: 3em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.891);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+  padding: 1em; 
+}
+
+/* Table styling */
+.table {
+  color: #fff; 
+}
+
+
+h2, a, button {
+  color: #fff; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+
+.btn {
+  border: none; 
+  padding: 0.5em 1em;
+  margin: 0.2em; 
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  background-color: #31708e; 
+  color: #fff;
+}
+
+/* Primary button color */
+.btn-primary {
+  background-color: #5bc0de; 
+}
+
+/* Danger button color */
+.btn-danger {
+  background-color: #d9534f; 
+}
+
+/* Warning button color */
+.btn-warning {
+  background-color: #f0ad4e; 
+}
+
+/* Button hover effects */
+.btn:hover {
+  background: #fbecec; 
+  color: #31718eb2; 
+  box-shadow: 0 0 15px #ffffff; 
+  transform: scale(1.05); 
+}
+
+.container {
+  width: 100%; 
+  max-width: 1200px; 
+  margin: auto; 
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse; 
+  margin-top: 20px; 
+}
+
+.table th, .table td {
+  text-align: left; 
+  padding: 8px; 
+  border-bottom: 1px solid #ddd; 
+}
+
+/* Header styling */
+.table thead th {
+  background-color: #31708e; 
+  color: #fff; 
+  text-align: center; 
+}
+
+.table tbody tr {
+  background-color: #f9f9f9; 
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #efefef;
+}
+
+/* Center the column titles and the data under them */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  text-align: center; 
+
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  text-align: center; 
+}
+
+/* Table body styling */
+.table tbody td {
+  color: #333;
+}
+
+.text-danger {
+    background: #717172; 
+    font-weight: bold; 
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem; 
+  }
+  
+/* UpdateAssignment form styling*/
+
+.form-container {
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 3em; 
+  border-radius: 10px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  max-width: 600px; 
+  margin: 3em auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.form-header {
+  background: linear-gradient(to right, #fa8072, #ff6347);
+  color: #fff; 
+  padding: 1em; 
+  width: 100%; 
+  text-align: center; 
+  border-radius: 8px 8px 0 0; 
+  margin-bottom: 2em; 
+}
+
+.form-container .form-control {
+  border: 1px solid #ff6347; 
+  border-radius: 5px; 
+  padding: 0.5em; 
+  width: 100%; 
+  margin-bottom: 1em; 
+}
+
+.form-container .form-control:focus {
+  border-color: #fa8072; 
+  box-shadow: 0 0 8px rgba(250, 128, 114, 0.5); 
+}
+
+.form-container label {
+  display: block; 
+  color: #fa8072; 
+  margin-bottom: 0.5em; 
+  font-weight: bold; 
+  text-align: left; 
+}
+
+.form-container .btn-primary {
+  background-color: #fa8072; 
+  border: none;
+  padding: 0.75em 1.5em; 
+  width: auto; 
+  margin: 0.5em 0; 
+}
+
+.form-container .btn-primary:hover {
+  background-color: #ff6347; 
+}
+
+.form-container .btn-link {
+  color: #fa8072; 
+  margin: 0.5em 0; 
+}
+
+.form-container .btn-link:hover {
+  color: #ff6347; 
+}
+
+/** Filter by Difficulty and Filter by Status styling.*/
+.filter-container {
+  margin: 20px;
+}
+
+.filter-header {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.header {
+  color: rgba(0, 0, 0, 0.5); 
+}
+
+.filter-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.filter-table th, .filter-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.filter-table th {
+  background-color: #f2f2f2;
+}
+
+.filter-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  background-color: #0056b3;
+}
+
+/* API Documentation link styling */
+
+.api-link {
+  color: #004080; 
+  background-color: #ffffff; 
+  padding: 12px 30px; 
+  border-radius: 5px; 
+  text-decoration: none; 
+  font-weight: bold; 
+  font-family: Arial, sans-serif; 
+  font-size: 1.5em; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  border: 2px solid #ff8b60; 
+  transition: all 0.3s ease; 
+  display: inline-block; 
+  margin-top: 20px; 
+}
+
+
+.api-link:hover {
+  background-color: #ff8b60; 
+  color: #fff; 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
+}

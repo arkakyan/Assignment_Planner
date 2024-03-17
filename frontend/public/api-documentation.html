@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Planner API Documentation</title>
+    <style>
+        body {
+            background-color: #ff6f61; 
+            color: #fff;
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            text-align: center;
+            min-height: 100vh; 
+            background: linear-gradient(to right, #ff6f61, #ff8b60);
+        }
+        .container {
+            background: #ff8b60; 
+            border-radius: 3em;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: auto;
+            width: 80%;
+            max-width: 960px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            color: #333;
+            text-align: left;
+        }
+        .endpoint {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #ff8b60;
+        }
+        h2 {
+        color: #004080; 
+        font-family: cursive;
+        font-weight: bold;
+        }
+
+        h1, h3 {
+            color: #333;
+        }
+        h1 {
+            color: #fff;
+        }
+        pre.json-example {
+            background-color: #f0f0f0;
+            color: #333;
+            border-left: 5px solid #ff8b60;
+            padding: 1em;
+            border-radius: 5px;
+            overflow: auto;
+            margin: 16px 0;
+        }
+        ul, li {
+            margin-left: 20px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Assignment Planner API Documentation</h2>
+        
+        <!-- Introduction -->
+        <div class="endpoint">
+            <h2>Introduction</h2>
+            <p>This API documentation provides comprehensive details on how to interact with the Assignment Planner API.</p>
+        </div>
+
+        <!-- Base URL -->
+        <div class="endpoint">
+            <h2>Base URL</h2>
+            <p>The base URL serves as the starting point for all API requests:</p>
+            <pre>http://localhost:3001/assignmentPlanner</pre>
+        </div>
+
+        <!-- Create a New Assignment -->
+        <div class="endpoint">
+            <h2>Create a New Assignment</h2>
+            <p><strong>POST</strong> /assignments</p>
+            <p>Create a new assignment by providing details in the request body:</p>
+            <pre class="json-example">
+                {
+                    "assignment_name": "Weekly Report 5",
+                    "difficulty_level": "Medium",
+                    "due_date": "2024-03-06",
+                    "instructor_first_name": "Eyhab",
+                    "instructor_last_name": "AI-Masri",
+                    "status": "Not Done"
+                  }
+ </pre>
+            <p>Success response (200 OK):</p>
+            <pre class="json-example">
+                {
+                "Success": "Successful: Record was added!."
+                }
+</pre>
+            <p>Error response (400 Bad Request):</p>
+            <pre class="json-example">
+                {
+                "Error": "Failed: Record was not added." 
+                }
+        </pre>
+        </div>
+
+        <!-- List All Assignments -->
+        <div class="endpoint">
+            <h2>List All Assignments</h2>
+            <p><strong>GET</strong> /assignments</p>
+            <p>Retrieves a list of all assignments. This endpoint does not require any request parameters.</p>
+            <pre class="json-example">
+                [
+                {
+                  "assignment_id": 1,
+                  "assignment_name": "Stack Full Development",
+                  "difficulty_level": "Hard",
+                  "due_date": "2024-02-23T08:00:00.000Z",
+                  "instructor_first_name": "Eyhab",
+                  "instructor_last_name": "AI-Masri",
+                  "status": "Not Done"
+                },
+                {
+                  "assignment_id": 2,
+                  "assignment_name": "Module 6 Rivew Question",
+                  "difficulty_level": "Medium",
+                  "due_date": "2024-02-16T08:00:00.000Z",
+                  "instructor_first_name": "Eyhab",
+                  "instructor_last_name": "AI-Masri",
+                  "status": "Done"
+                },
+                {
+                    "assignment_id": 29,
+                    "assignment_name": "New Assignment",
+                    "difficulty_level": "Medium",
+                    "due_date": "2024-02-16T08:00:00.000Z",
+                    "instructor_first_name": "Khin",
+                    "instructor_last_name": "Win",
+                    "status": "Not Done"
+                  }
+                ]
+
+ </pre>
+            <p>Success response (200 OK):</p>
+            <pre class="json-example">
+                {
+                "Success": result
+                }
+        </pre>
+            <p>Error response (404 Not Found):</p>
+            <pre class="json-example">
+                {
+                "Error": "Cannot GET /assignmentPlannr" 
+                }</pre>
+        </div>
+
+        <!-- Retrieve a Specific Assignment by ID -->
+        <div class="endpoint">
+            <h2>Retrieve a Specific Assignment by ID</h2>
+            <p><strong>GET</strong> /assignments/:assignment_id</p>
+            <p>Get details of a specific assignment by its ID.</p>
+            <pre class="json-example">
+                {
+                "Success": "Successfully finished.",
+                "data": [
+                  {
+                    "assignment_id": 1,
+                    "assignment_name": "Stack Full Development",
+                    "difficulty_level": "Hard",
+                    "due_date": "2024-02-23",
+                    "instructor_first_name": "Eyhab",
+                    "instructor_last_name": "AI-Masri",
+                    "status": "Not Done"
+                  }
+                ]
+              }
+            </pre>
+              <p>Success response (200 OK):</p>
+              <p>Error response (404 Not Found):</p>
+              <pre class="json-example">
+                {
+                "Error": true,
+                "Message": "Assignment not found"
+                }</pre>
+        </div>
+
+        <!-- Update an Existing Assignment -->
+        <div class="endpoint">
+            <h2>Update an Existing Assignment</h2>
+            <p><strong>PUT</strong> /assignments/:assignment_id</p>
+            <p>Updates an existing assignment. Provide the assignment ID and details to update in the request body.</p>
+            <pre class="json-example">
+                {
+                    "assignment_name": "Weekly Report 5",
+                    "difficulty_level": "Medium",
+                    "due_date": "2024-03-06",
+                    "instructor_first_name": "Eyhab",
+                    "instructor_last_name": "AI-Masri",
+                    "status": "Done"
+                  }
+            </pre>
+            <p>Success response (200 OK):</p>
+            <pre class="json-example">
+                {
+                "Success": "Successful: Record was updated!."
+                }
+            </pre>
+              <p>Error response (400 Bad Request):</p>
+              <pre class="json-example">
+                {
+                  "Error": "Failed: All fields are required and must not be empty."
+                }
+              </pre>
+        </div>
+
+        <!-- Delete an Assignment -->
+        <div class="endpoint">
+            <h2>Delete an Assignment</h2>
+            <p><strong>DELETE</strong> /assignments/:assignment_id</p>
+            <p>Deletes a specific assignment by its ID. Also please make sure to provide the assignment ID in the URL.</p>
+            <p>Success response (200 OK):</p>
+            <pre class="json-example">
+                {
+                  "Success": "Successful: Record was deleted!"
+                }
+            </pre>
+            <p>Error response (404 Not Found):</p>
+            <pre class="json-example">
+              {
+                "Error": true,
+                "Message": "Record not found."
+              }
+              
+            </pre>
+        </div>
+
+        <!-- Retrieve Assignments Filtered by Difficulty Level -->
+        <div class="endpoint">
+            <h2>Retrieve Assignments Filtered by Difficulty Level</h2>
+            <p><strong>GET</strong> /assignments/difficulty/:difficulty_level</p>
+            <p>Get assignments filtered by a specific difficulty level. Also, please replace `:difficulty_level` with the desired difficulty level (Easy, Medium, Hard) in the URL.</p>
+
+            <pre class="json-example">
+                {
+                    "Success": "Successfully finished.",
+                    "data": [
+                      {
+                        "assignment_id": 7,
+                        "assignment_name": "Labor Journal Essay",
+                        "difficulty_level": "Easy",
+                        "due_date": "2024-02-18",
+                        "instructor_first_name": "Chris",
+                        "instructor_last_name": "Marriott",
+                        "status": "Not Done"
+                      },
+                      {
+                        "assignment_id": 9,
+                        "assignment_name": "Miutes and Assesment",
+                        "difficulty_level": "Easy",
+                        "due_date": "2024-02-18",
+                        "instructor_first_name": "Chris",
+                        "instructor_last_name": "Marriott",
+                        "status": "Not Done"
+                      },
+                      
+                      {
+                        "assignment_id": 28,
+                        "assignment_name": "Week-8 Reflection",
+                        "difficulty_level": "Easy",
+                        "due_date": "2024-02-25",
+                        "instructor_first_name": "Chris",
+                        "instructor_last_name": "Marriott",
+                        "status": "Not Done"
+                      }
+                    ]
+                  }
+            </pre>
+            <p>Success response (200 OK):</p>
+            <p>Error response (404 Not Found):</p>
+            <pre class="json-example">
+                {
+                    "Error": true,
+                    "Message": "No assignments found with the specified status."
+                }
+            </pre>
+        </div>
+
+        <!-- Retrieve Assignments Filtered by Status -->
+        <div class="endpoint">
+            <h2>Retrieve Assignments Filtered by Status</h2>
+            <p><strong>GET</strong> /assignments/status/:status</p>
+            <p>Lists assignments based on their status. Also please replace `:status` with the desired status (Not Done, Done) in the URL.</p>
+
+            <pre class="json-example">
+                {
+                    "Success": "Successfully finished.",
+                    "data": [
+                      {
+                        "assignment_id": 2,
+                        "assignment_name": "Module 6 Rivew Question",
+                        "difficulty_level": "Medium",
+                        "due_date": "2024-02-16",
+                        "instructor_first_name": "Eyhab",
+                        "instructor_last_name": "AI-Masri",
+                        "status": "Done"
+                      },
+                      {
+                        "assignment_id": 12,
+                        "assignment_name": "Prototype Project",
+                        "difficulty_level": "Hard",
+                        "due_date": "2024-01-28",
+                        "instructor_first_name": "Chris",
+                        "instructor_last_name": "Marriott",
+                        "status": "Done"
+                      },
+                      
+                      {
+                        "assignment_id": 16,
+                        "assignment_name": "Weekly Report 2",
+                        "difficulty_level": "Medium",
+                        "due_date": "2024-02-14",
+                        "instructor_first_name": "Eyhab",
+                        "instructor_last_name": "AI-Masri",
+                        "status": "Done"
+                      }
+                    ]
+                  }
+            </pre>
+            <p>Success response (200 OK):</p>
+            <p>Error response (404 Not Found):</p>
+            <pre class="json-example">
+                {
+                    "Error": true,
+                    "Message": "No assignments found with the specified status."
+                }
+            </pre>
+        </div>
+
+    </div>
+</body>
+</html>
